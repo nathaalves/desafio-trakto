@@ -1,0 +1,62 @@
+<main class="flex items-center justify-center h-screen bg-[#EFF2F9]">
+  <div class="flex flex-col w-full max-w-[300px] text-[#04183E]">
+    <img
+      src="../../../assets/images/logo.svg"
+      alt="trakto logo"
+      class="max-w-max h-[30px]"
+    />
+    <p class="text-xl font-bold mt-10 mb-6">Olá, faça login em sua conta.</p>
+    <form
+      class="flex flex-col gap-6"
+      (ngSubmit)="onLoginRequest(f.value)"
+      #f="ngForm"
+    >
+      <div class="flex flex-col gap-1 focus-within:text-[#66AFFF]">
+        <label for="login-email" class="text-xs"> E-mail </label>
+        <input
+          class="h-12 px-4 text-sm border border-[#D0DAEF] rounded text-[#04183E] focus:outline outline-[#66AFFF] caret-[#66AFFF] placeholder:text-[#D0DAEF] disabled:opacity-60 disabled:text-[#D0DAEF] disabled:bg-white"
+          name="email"
+          id="login-email"
+          placeholder="Endereço de e-mail"
+          [disabled]="isFetching"
+          ngModel
+          email
+          required
+        />
+      </div>
+      <div class="flex flex-col gap-1 focus-within:text-[#66AFFF]">
+        <label for="login-email" class="text-xs">Senha</label>
+        <input
+          class="h-12 px-4 text-sm border border-[#D0DAEF] rounded text-[#04183E] focus:outline outline-[#66AFFF] caret-[#66AFFF] placeholder:text-[#D0DAEF] disabled:opacity-60 disabled:text-[#D0DAEF] disabled:bg-white"
+          type="password"
+          name="password"
+          id="login-password"
+          placeholder="Digite sua senha"
+          [disabled]="isFetching"
+          ngModel
+          required
+        />
+      </div>
+      <button
+        class="flex items-center justify-center h-12 px-4 py-2 rounded text-white font-medium bg-[#1DC763] hover:bg-[#4D964B] disabled:opacity-60 disabled:pointer-events-none"
+        [disabled]="isFetching || !f.valid"
+      >
+        <span class="flex items-center gap-2" *ngIf="isFetching">
+          <span class="w-4 h-4">
+            <img
+              src="../../../assets/icons/ellipse.svg"
+              alt="ellipse animation"
+              class="animate-spin"
+            />
+          </span>
+          <span>Entrando...</span>
+        </span>
+        <span *ngIf="!isFetching">Entrar</span>
+      </button>
+    </form>
+  </div>
+  <app-error-message
+    *ngIf="errorMessage"
+    [message]="errorMessage"
+  ></app-error-message>
+</main>
