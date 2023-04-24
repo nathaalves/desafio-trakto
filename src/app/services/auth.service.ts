@@ -37,11 +37,19 @@ export class AuthService {
     id: string,
     email: string,
     firstName: string,
+    profilePicture: string,
     token: string
   ) {
     const tokenPayload: TokenPayload = jwt_decode(token);
     const tokenExpirationDate = new Date(tokenPayload.exp * 1000);
-    const user = new User(id, email, firstName, token, tokenExpirationDate);
+    const user = new User(
+      id,
+      email,
+      firstName,
+      profilePicture,
+      token,
+      tokenExpirationDate
+    );
     this.user.next(user);
   }
 
@@ -62,6 +70,7 @@ export class AuthService {
             res.id,
             res.email,
             res.firstName,
+            res.logo.url.low.url,
             res.access_token
           );
         })

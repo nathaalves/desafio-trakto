@@ -1,0 +1,22 @@
+<a [routerLink]="[link]" class="relative min-w-max">
+  <div
+    class="flex items-center justify-center w-[373px] h-[373px] rounded-full bg-[#464141]"
+  >
+    <div
+      class="flex items-center justify-center w-[311px] h-[311px] rounded-full border-[0.5px] background-pattern-small"
+      ngClass="{{
+        'border-[' + borderColor + '] bg-[' + backgroundColor + ']'
+      }}"
+    >
+      <img [src]="image" alt="" />
+    </div>
+  </div>
+  <div
+    class="flex flex-col items-center justify-between gap-1 absolute -top-[84px] left-1/2 -translate-x-1/2"
+  >
+    <label class="font-family-poppins text-5xl text-white font-bold min-w-max">
+      {{ label }}
+    </label>
+    <span class="{{ 'h-1 w-7 bg-[' + labelColor + ']' }}"></span>
+  </div>
+</a>

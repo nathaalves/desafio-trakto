@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -9,14 +10,14 @@ export class LoginComponent {
   public isFetching = false;
   public errorMessage: string | null = null;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   onLoginRequest(credentials: { email: string; password: string }) {
     this.isFetching = true;
     this.authService.login(credentials).subscribe({
       next: () => {
         this.isFetching = false;
-        console.log('Login efetuado com sucesso!');
+        this.router.navigate(['/home']);
       },
       error: (err) => {
         this.isFetching = false;
