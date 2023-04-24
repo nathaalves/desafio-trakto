@@ -1,0 +1,9 @@
+.font-family-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.background-pattern {
+  background-image: url("../../../assets/images/background_pattern.png");
+  background-size: 1500px;
+  background-position: center;
+}

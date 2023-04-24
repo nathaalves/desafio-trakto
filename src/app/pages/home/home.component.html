@@ -1,1 +1,51 @@
-<p>home works!</p>
+<div class="flex flex-col h-screen">
+  <app-header></app-header>
+  <main class="flex flex-1">
+    <nav class="flex flex-1">
+      <ul
+        class="flex flex-1 items-center justify-evenly background-pattern bg-[#1D1B1B]"
+      >
+        <li>
+          <app-home-anchor
+            label="Material Didático"
+            labelColor="#4173CD"
+            borderColor="#80ABF9"
+            backgroundColor="#C2D8FF"
+            image="../../../assets/images/study_book.svg"
+            link="/home/material-didatico"
+          ></app-home-anchor>
+        </li>
+        <li>
+          <app-home-anchor
+            label="Quiz"
+            labelColor="#1DC763"
+            borderColor="#FFCF60"
+            backgroundColor="#91DEA2"
+            image="../../../assets/images/medal.svg"
+            link="/home/quiz"
+          ></app-home-anchor>
+        </li>
+        <li>
+          <app-home-anchor
+            label="Desenho"
+            labelColor="#F6B5FF"
+            borderColor="#FFCF60"
+            backgroundColor="#F4AEFF"
+            image="../../../assets/images/paint.svg"
+            link="/home/desenho"
+          ></app-home-anchor>
+        </li>
+        <li>
+          <app-home-anchor
+            label="Youtube"
+            labelColor="#FF0000"
+            borderColor="#FF6868"
+            backgroundColor="#FFBFBF"
+            image="../../../assets/images/youtube.svg"
+            link="/home/youtube"
+          ></app-home-anchor>
+        </li>
+      </ul>
+    </nav>
+  </main>
+</div>
