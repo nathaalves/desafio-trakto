@@ -8,9 +8,16 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ErroMessageComponent } from './components/shared/error-message/error-message.component';
 import { HomeComponent } from './pages/home/home.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, ErroMessageComponent, LoginComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    ErroMessageComponent,
+    LoginComponent,
+    HomeComponent,
+    HeaderComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
