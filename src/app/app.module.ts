@@ -9,6 +9,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ErroMessageComponent } from './components/shared/error-message/error-message.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
+import { HomeAnchorComponent } from './pages/home/components/home-anchor/home-anchor.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HeaderComponent } from './components/header/header.component';
     LoginComponent,
     HomeComponent,
     HeaderComponent,
+    HomeAnchorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
