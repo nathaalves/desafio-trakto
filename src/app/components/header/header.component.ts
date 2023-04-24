@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent {
   public date: string;
+  public profilePicture: string | undefined;
 
-  constructor() {
+  constructor(private authService: AuthService) {
     const day =
       new Date().getDate() < 10
         ? `0${new Date().getDate()}`
@@ -19,5 +21,11 @@ export class HeaderComponent {
         : new Date().getMonth();
     const year = new Date().getFullYear();
     this.date = `${day}/${month}/${year}`;
+
+    this.authService.user.subscribe((user) => {
+      if (user) {
+        this.profilePicture = user.profilePicture;
+      }
+    });
   }
 }
