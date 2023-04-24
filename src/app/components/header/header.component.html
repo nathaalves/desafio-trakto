@@ -1,33 +1,82 @@
-<header class="flex items-center justify-between h-[76px] px-16 bg-[#252323]">
+<header
+  class="{{
+    currentRoute === '/home' ? 'bg-[#252323]' : 'bg-white'
+  }} flex items-center h-[76px] px-16"
+>
   <img
-    src="../../../assets/images/logo_edu.svg"
+    src="{{
+      currentRoute === '/home'
+        ? '../../../assets/images/logo_edu.svg'
+        : '../../../assets/images/logo_edu_dark.svg'
+    }}"
     alt="trackto edu logo"
     class="h-14 max-w-max"
   />
-  <div class="flex items-center">
+  <button
+    class="flex items-center justify-center w-64 h-14 ml-14 mr-auto gap-2 border border-[#7183A6] rounded-lg text-[#7183A6] text-xl font-medium]"
+    (click)="onChangeEnvironment()"
+    *ngIf="currentRoute !== '/home'"
+  >
+    <img src="../../../assets/icons/logout.svg" alt="" />
+    Trocar de ambiente
+  </button>
+  <div class="flex items-center ml-auto">
     <div class="flex items-center gap-2">
       <button>
-        <img src="../../../assets/icons/calendar.svg" alt="calendar icon" />
+        <img
+          src="{{
+            currentRoute === '/home'
+              ? '../../../assets/icons/calendar.svg'
+              : '../../../assets/icons/calendar-dark.svg'
+          }}"
+          alt="calendar icon"
+        />
       </button>
-      <span class="text-[#E4EBFB] text-lg">{{ date }}</span>
+      <span
+        class="{{
+          currentRoute === '/home' ? 'text-[#E4EBFB]' : 'text-[#7183A6]'
+        }} text-lg"
+        >{{ date }}</span
+      >
     </div>
-    <div class="w-px h-6 mx-8 bg-[#E4EBFB]"></div>
+    <span
+      class="{{
+        currentRoute === '/home' ? 'bg-[#E4EBFB]' : 'bg-[#7183A6]'
+      }} w-px h-6 mx-8"
+    ></span>
     <button>
       <img
-        src="../../../assets/icons/notification.svg"
+        src="{{
+          currentRoute === '/home'
+            ? '../../../assets/icons/notification.svg'
+            : '../../../assets/icons/notification-dark.svg'
+        }}"
         alt="notification icon"
       />
     </button>
-    <span class="w-px h-6 mx-8 bg-[#E4EBFB]"></span>
+    <span
+      class="{{
+        currentRoute === '/home' ? 'bg-[#E4EBFB]' : 'bg-[#7183A6]'
+      }} w-px h-6 mx-8"
+    ></span>
     <button class="flex items-center gap-1">
       <img
-        [src]="profilePicture"
+        [src]="
+          profilePicture
+            ? profilePicture
+            : '../../../assets/images/user-avatar.png'
+        "
         class="w-10 h-10 rounded-full"
         alt="user's profile picture"
       />
       <img
-        src="../../../assets/icons/dropdown-menu.svg"
+        src="{{
+          currentRoute === '/home'
+            ? '../../../assets/icons/dropdown-menu.svg'
+            : '../../../assets/icons/dropdown-menu-dark.svg'
+        }}"
         alt="dropdown menu icon"
+        class="svg-fill"
       />
     </button>
   </div>
