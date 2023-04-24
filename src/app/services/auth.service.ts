@@ -70,7 +70,7 @@ export class AuthService {
             res.id,
             res.email,
             res.firstName,
-            res.logo.url.low.url,
+            res.logo?.url.low.url,
             res.access_token
           );
         })
