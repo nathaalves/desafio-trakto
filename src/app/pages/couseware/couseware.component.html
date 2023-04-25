@@ -1,0 +1,77 @@
+<div class="flex flex-col h-screen">
+  <app-header></app-header>
+  <main class="flex flex-col flex-1 p-16 pt-8 gap-12 bg-[#EFF2F9]">
+    <img src="../../../assets/images/frame.svg" alt="frame courseware" />
+    <section
+      class="flex flex-col pl-[72px] pt-14 pb-[84px] rounded-lg bg-white"
+    >
+      <div class="flex mb-11 mr-[72px]">
+        <div class="flex flex-col mr-auto">
+          <div class="flex items-center gap-2">
+            <p
+              class="flex items-center justify-center w-[196px] h-[28px] text-[#7183A6] font-medium vert rounded-full bg-[#E4EBFB]"
+            >
+              Semana {{ firstUpdatedDate }} até {{ lastUpdatedDate }}
+            </p>
+            <div class="flex">
+              <button>
+                <img
+                  src="../../../assets/icons/arrow-left.svg"
+                  alt="arrow left"
+                  (click)="scrollLeft()"
+                />
+              </button>
+              <button>
+                <img
+                  src="../../../assets/icons/arrow-right.svg"
+                  alt="arrow right"
+                  (click)="scrollRight()"
+                />
+              </button>
+            </div>
+          </div>
+          <h2 class="text-2xl text-[#354564] font-bold mt-4 mb-2">
+            Material didático
+          </h2>
+          <p class="text-[#7183A6]">
+            Acesse suas últimas apresentações de aula.
+          </p>
+        </div>
+        <button
+          class="flex items-center justify-center w-[180px] h-[52px] border border-[#4743FF] rounded-lg text-[#4743FF] font-medium"
+        >
+          Ver todo conteúdo
+        </button>
+      </div>
+      <div
+        class="overflow-x-scroll scrollbar-hide scroll-smooth"
+        #scrollContainer
+      >
+        <div class="flex gap-8" #coursesContainer>
+          <a
+            href="https://editor.trakto.io/presentation/p/{{ course.id }}"
+            target="_blank"
+            class="w-[310px]"
+            *ngFor="let course of courseware"
+          >
+            <div class="w-[310px] h-[174px] relative">
+              <img
+                src="{{ course.thumb }}"
+                alt="{{ course.title }}"
+                class="rounded-lg"
+              />
+              <span
+                class="flex items-center justify-center h-6 px-2 text-sm text-white absolute left-4 bottom-4 bg-[#0C0C0C]/70 rounded-full"
+              >
+                {{ course.pages }} slides
+              </span>
+            </div>
+            <h3 class="text-lg text-[#354564] font-semibold leading-6 mt-4">
+              {{ course.title }}
+            </h3>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

@@ -10,6 +10,7 @@ import { ErroMessageComponent } from './components/shared/error-message/error-me
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeAnchorComponent } from './pages/home/components/home-anchor/home-anchor.component';
+import { CousewareComponent } from './pages/couseware/couseware.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HomeAnchorComponent } from './pages/home/components/home-anchor/home-an
     HomeComponent,
     HeaderComponent,
     HomeAnchorComponent,
+    CousewareComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
