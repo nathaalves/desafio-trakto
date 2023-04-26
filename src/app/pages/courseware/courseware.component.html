@@ -1,0 +1,63 @@
+<div class="flex flex-col h-screen">
+  <app-header></app-header>
+  <main class="flex flex-col flex-1 p-16 pt-8 gap-12 bg-[#EFF2F9]">
+    <img src="../../../assets/images/frame.svg" alt="frame courseware" />
+    <section
+      class="flex flex-col pl-[72px] pt-14 pb-[84px] rounded-lg bg-white"
+    >
+      <div class="flex mb-11 mr-[72px]">
+        <div class="flex flex-col mr-auto">
+          <div class="flex items-center gap-2">
+            <p
+              class="flex items-center justify-center w-[196px] h-[28px] text-[#7183A6] font-medium vert rounded-full bg-[#E4EBFB]"
+            >
+              Semana {{ firstUpdatedDate }} até {{ lastUpdatedDate }}
+            </p>
+            <div class="flex">
+              <button>
+                <img
+                  src="../../../assets/icons/arrow-left.svg"
+                  alt="arrow left"
+                  (click)="scrollLeft()"
+                />
+              </button>
+              <button>
+                <img
+                  src="../../../assets/icons/arrow-right.svg"
+                  alt="arrow right"
+                  (click)="scrollRight()"
+                />
+              </button>
+            </div>
+          </div>
+          <h2 class="text-2xl text-[#354564] font-bold mt-4 mb-2">
+            Material didático
+          </h2>
+          <p class="text-[#7183A6]">
+            Acesse suas últimas apresentações de aula.
+          </p>
+        </div>
+        <button
+          class="flex items-center justify-center w-[180px] h-[52px] border border-[#4743FF] rounded-lg text-[#4743FF] font-medium"
+        >
+          Ver todo conteúdo
+        </button>
+      </div>
+      <div
+        class="overflow-x-scroll scrollbar-hide scroll-smooth"
+        #scrollContainer
+      >
+        <div class="flex gap-8" #coursesContainer>
+          <app-course
+            *ngFor="let course of courseware"
+            [id]="course.id"
+            [title]="course.title"
+            [slideAmount]="course.pages"
+            [thumb]="course.thumb"
+          >
+          </app-course>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
