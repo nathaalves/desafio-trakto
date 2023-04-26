@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AuthGuard } from './guards/auth.guard';
-import { CousewareComponent } from './pages/couseware/couseware.component';
+import { CoursewareComponent } from './pages/courseware/courseware.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'material-didatico',
-    component: CousewareComponent,
+    component: CoursewareComponent,
     canActivate: [AuthGuard],
   },
   { path: 'login', component: LoginComponent },

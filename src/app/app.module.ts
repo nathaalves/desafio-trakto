@@ -10,7 +10,8 @@ import { ErroMessageComponent } from './components/shared/error-message/error-me
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeAnchorComponent } from './pages/home/components/home-anchor/home-anchor.component';
-import { CousewareComponent } from './pages/couseware/couseware.component';
+import { CoursewareComponent } from './pages/courseware/courseware.component';
+import { CourseComponent } from './pages/courseware/components/course/course.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CousewareComponent } from './pages/couseware/couseware.component';
     HomeComponent,
     HeaderComponent,
     HomeAnchorComponent,
-    CousewareComponent,
+    CoursewareComponent,
+    CourseComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
