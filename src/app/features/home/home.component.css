@@ -3,7 +3,7 @@
 }
 
 .background-pattern {
-  background-image: url("../../../assets/images/background_pattern.png");
-  background-size: 1500px;
+  background: url("../../../assets/images/background_pattern.png"), #1d1b1b;
+  background-size: 2000px;
   background-position: center;
 }
