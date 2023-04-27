@@ -12,4 +12,5 @@ export class HomeAnchorComponent {
   @Input() borderClassColor: string = '';
   @Input() backgroundClassColor: string = '';
   @Input() link: string = '';
+  @Input() containerImageClassEffect: string = '';
 }
