@@ -4,9 +4,7 @@ import { map, take, exhaustMap } from 'rxjs';
 import { Courseware } from './courseware.model';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class CoursewareService {
   constructor(private http: HttpClient, private authService: AuthService) {}
 
