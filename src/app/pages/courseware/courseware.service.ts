@@ -10,11 +10,13 @@ import { AuthService } from 'src/app/services/auth.service';
 export class CoursewareService {
   constructor(private http: HttpClient, private authService: AuthService) {}
 
-  fetchData() {
+  fetchData(filter?: { [key: string]: string }) {
+    const query = filter ? `?${new URLSearchParams(filter).toString()}` : '';
+
     return this.authService.user.pipe(
       take(1),
       exhaustMap((user) => {
-        return this.http.get('https://api.trakto.io/document', {
+        return this.http.get(`https://api.trakto.io/document${query}`, {
           headers: {
             Authorization: `Bearer ${user?.token}`,
           },
@@ -28,7 +30,7 @@ export class CoursewareService {
               data.id,
               data.title,
               data.thumbs.low,
-              data.pages.length,
+              data.pages?.length ? data.pages.length : 1,
               data.updated_at
             )
           );
