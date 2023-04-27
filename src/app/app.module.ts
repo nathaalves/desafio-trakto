@@ -1,36 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
+import { LoginModule } from './features/login/login.module';
+import { HomeModule } from './features/home/home.module';
+import { SharedModule } from './shared/shared.module';
+
 import { AppComponent } from './app.component';
-import { LoginComponent } from './pages/login/login.component';
-import { ErroMessageComponent } from './components/shared/error-message/error-message.component';
-import { HomeComponent } from './pages/home/home.component';
-import { HeaderComponent } from './components/header/header.component';
-import { HomeAnchorComponent } from './pages/home/components/home-anchor/home-anchor.component';
-import { CoursewareComponent } from './pages/courseware/courseware.component';
-import { CourseComponent } from './pages/courseware/components/course/course.component';
-import { CoursewareSectionComponent } from './pages/courseware/components/courseware-section/courseware-section.component';
-import { CoursewareHomeComponent } from './pages/courseware/pages/courseware-home/courseware-home.component';
-import { CoursewareSeeAllComponent } from './pages/courseware/pages/courseware-see-all/courseware-see-all.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ErroMessageComponent,
-    LoginComponent,
-    HomeComponent,
-    HeaderComponent,
-    HomeAnchorComponent,
-    CoursewareComponent,
-    CourseComponent,
-    CoursewareSectionComponent,
-    CoursewareHomeComponent,
-    CoursewareSeeAllComponent,
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    LoginModule,
+    HomeModule,
+    SharedModule,
+    AppRoutingModule,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
