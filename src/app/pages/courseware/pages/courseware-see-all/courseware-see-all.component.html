@@ -1,0 +1,13 @@
+<app-courseware-section
+  title="Material didático"
+  subtitle="Acesse suas últimas apresentações de aula."
+>
+  <app-course
+    *ngFor="let course of courseware"
+    [id]="course.id"
+    [title]="course.title"
+    [slideAmount]="course.pages"
+    [thumb]="course.thumb"
+  >
+  </app-course>
+</app-courseware-section>
