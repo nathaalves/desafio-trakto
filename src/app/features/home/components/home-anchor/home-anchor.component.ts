@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home-anchor',
@@ -7,9 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class HomeAnchorComponent {
   @Input() label: string = '';
-  @Input() labelColor: string = '';
+  @Input() labelClassColor: string = '';
   @Input() image: string = '';
-  @Input() borderColor: string = '';
-  @Input() backgroundColor: string = '';
+  @Input() borderClassColor: string = '';
+  @Input() backgroundClassColor: string = '';
   @Input() link: string = '';
 }

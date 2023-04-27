@@ -5,7 +5,7 @@
     <div
       class="
         flex items-center justify-center w-[311px] h-[311px] rounded-full border-[0.5px] background-pattern-small 
-        border-[{{ borderColor }}] bg-[{{ backgroundColor }}]
+        {{ borderClassColor }} {{ backgroundClassColor }}
       "
     >
       <img [src]="image" alt="" />
@@ -17,6 +17,6 @@
     <label class="font-family-poppins text-5xl text-white font-bold min-w-max">
       {{ label }}
     </label>
-    <span class="h-1 w-7 bg-[{{ labelColor }}]"></span>
+    <span class="h-1 w-7 {{ labelClassColor }}"></span>
   </div>
 </a>
