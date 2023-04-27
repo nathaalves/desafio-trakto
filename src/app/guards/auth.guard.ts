@@ -6,7 +6,7 @@ import {
 } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard {
