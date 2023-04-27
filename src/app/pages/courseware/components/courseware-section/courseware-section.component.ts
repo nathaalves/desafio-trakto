@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-courseware-section',
@@ -8,14 +9,18 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 export class CoursewareSectionComponent {
   @ViewChild('scrollContainer') scrollContainer!: ElementRef<HTMLDivElement>;
   @ViewChild('coursesContainer') coursesContainer!: ElementRef<HTMLDivElement>;
-  scrollPosition = 0;
+  private scrollPosition: number = 0;
 
   @Input() title: string = '';
   @Input() subtitle: string = '';
   @Input() buttonLabel: string = '';
   @Input() buttonColor: string = '';
-  @Input() firstUpdatedDate = '';
-  @Input() lastUpdatedDate = '';
+  @Input() firstUpdatedDate: string = '';
+  @Input() lastUpdatedDate: string = '';
+
+  currentRoute: string = this.router.url;
+
+  constructor(private router: Router) {}
 
   scrollLeft() {
     const scrollContainerWidth = this.scrollContainer.nativeElement.offsetWidth;
@@ -41,5 +46,9 @@ export class CoursewareSectionComponent {
     if (this.scrollPosition > coursesContainerWidth) {
       this.scrollPosition = coursesContainerWidth;
     }
+  }
+
+  onSeeAll() {
+    this.router.navigate(['/material-didatico', 'ver-todos']);
   }
 }
