@@ -13,6 +13,8 @@ import { HomeAnchorComponent } from './pages/home/components/home-anchor/home-an
 import { CoursewareComponent } from './pages/courseware/courseware.component';
 import { CourseComponent } from './pages/courseware/components/course/course.component';
 import { CoursewareSectionComponent } from './pages/courseware/components/courseware-section/courseware-section.component';
+import { CoursewareHomeComponent } from './pages/courseware/pages/courseware-home/courseware-home.component';
+import { CoursewareSeeAllComponent } from './pages/courseware/pages/courseware-see-all/courseware-see-all.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { CoursewareSectionComponent } from './pages/courseware/components/course
     CoursewareComponent,
     CourseComponent,
     CoursewareSectionComponent,
+    CoursewareHomeComponent,
+    CoursewareSeeAllComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
