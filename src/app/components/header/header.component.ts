@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -9,8 +10,9 @@ import { AuthService } from 'src/app/services/auth.service';
 export class HeaderComponent {
   public date: string;
   public profilePicture: string | undefined;
+  public currentRoute: string;
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private router: Router) {
     const day =
       new Date().getDate() < 10
         ? `0${new Date().getDate()}`
@@ -27,5 +29,11 @@ export class HeaderComponent {
         this.profilePicture = user.profilePicture;
       }
     });
+
+    this.currentRoute = this.router.url;
+  }
+
+  onChangeEnvironment() {
+    this.router.navigate(['/home']);
   }
 }

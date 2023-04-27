@@ -1,0 +1,13 @@
+<a href="https://editor.trakto.io/presentation/p/{{ id }}" target="_blank">
+  <div class="w-[310px] h-[174px] relative">
+    <img src="{{ thumb }}" alt="{{ title }}" class="rounded-lg" />
+    <span
+      class="flex items-center justify-center h-6 px-2 text-sm text-white absolute left-4 bottom-4 bg-[#0C0C0C]/70 rounded-full"
+    >
+      {{ slideAmount }} {{ slideAmount > 1 ? "slides" : "slide" }}
+    </span>
+  </div>
+  <h3 class="w-[310px] text-lg text-[#354564] font-semibold leading-6 mt-4">
+    {{ title }}
+  </h3>
+</a>
