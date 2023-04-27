@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 
 import { CoursewareRoutingModule } from './courseware-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -18,7 +17,7 @@ import { CoursewareSeeAllComponent } from './pages/courseware-see-all/courseware
     CoursewareHomeComponent,
     CoursewareSeeAllComponent,
   ],
-  imports: [HttpClientModule, SharedModule, CoursewareRoutingModule],
+  imports: [SharedModule, CoursewareRoutingModule],
   exports: [],
 })
 export class CoursewareModule {}
