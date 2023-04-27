@@ -7,6 +7,7 @@ import { HomeModule } from './features/home/home.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
+import { ScrollService } from './shared/services/scroll.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,4 +21,8 @@ import { AppComponent } from './app.component';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private scrollService: ScrollService) {
+    this.scrollService.setupScrollTopOnNavigation();
+  }
+}
