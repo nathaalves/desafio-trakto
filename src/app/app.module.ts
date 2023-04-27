@@ -5,16 +5,16 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './pages/login/login.component';
+import { LoginComponent } from './features/login/login.component';
 import { ErroMessageComponent } from './components/shared/error-message/error-message.component';
-import { HomeComponent } from './pages/home/home.component';
+import { HomeComponent } from './features/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
-import { HomeAnchorComponent } from './pages/home/components/home-anchor/home-anchor.component';
-import { CoursewareComponent } from './pages/courseware/courseware.component';
-import { CourseComponent } from './pages/courseware/components/course/course.component';
-import { CoursewareSectionComponent } from './pages/courseware/components/courseware-section/courseware-section.component';
-import { CoursewareHomeComponent } from './pages/courseware/pages/courseware-home/courseware-home.component';
-import { CoursewareSeeAllComponent } from './pages/courseware/pages/courseware-see-all/courseware-see-all.component';
+import { HomeAnchorComponent } from './features/home/components/home-anchor/home-anchor.component';
+import { CoursewareComponent } from './features/courseware/courseware.component';
+import { CourseComponent } from './features/courseware/components/course/course.component';
+import { CoursewareSectionComponent } from './features/courseware/components/courseware-section/courseware-section.component';
+import { CoursewareHomeComponent } from './features/courseware/pages/courseware-home/courseware-home.component';
+import { CoursewareSeeAllComponent } from './features/courseware/pages/courseware-see-all/courseware-see-all.component';
 
 @NgModule({
   declarations: [
