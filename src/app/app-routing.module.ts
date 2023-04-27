@@ -4,6 +4,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 import { CoursewareComponent } from './pages/courseware/courseware.component';
+import { CoursewareHomeComponent } from './pages/courseware/pages/courseware-home/courseware-home.component';
+import { CoursewareSeeAllComponent } from './pages/courseware/pages/courseware-see-all/courseware-see-all.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -16,6 +18,10 @@ const routes: Routes = [
     path: 'material-didatico',
     component: CoursewareComponent,
     canActivate: [AuthGuard],
+    children: [
+      { path: '', component: CoursewareHomeComponent },
+      { path: 'ver-todos', component: CoursewareSeeAllComponent },
+    ],
   },
   { path: 'login', component: LoginComponent },
 ];
