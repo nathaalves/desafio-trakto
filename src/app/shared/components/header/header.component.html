@@ -13,7 +13,7 @@
     class="h-14 max-w-max"
   />
   <button
-    class="flex items-center justify-center w-64 h-14 ml-14 mr-auto gap-2 border border-[#7183A6] rounded-lg text-[#7183A6] text-xl font-medium]"
+    class="flex items-center justify-center w-64 h-14 ml-14 mr-auto gap-2 border border-[#7183A6] rounded-lg text-[#7183A6] text-xl font-medium] hover:opacity-60"
     (click)="onChangeEnvironment()"
     *ngIf="currentRoute !== '/home'"
   >
@@ -22,7 +22,7 @@
   </button>
   <div class="flex items-center ml-auto">
     <div class="flex items-center gap-2">
-      <button>
+      <button class="hover:opacity-60">
         <img
           src="{{
             currentRoute === '/home'
@@ -44,7 +44,7 @@
         currentRoute === '/home' ? 'bg-[#E4EBFB]' : 'bg-[#7183A6]'
       }} w-px h-6 mx-8"
     ></span>
-    <button>
+    <button class="hover:opacity-60">
       <img
         src="{{
           currentRoute === '/home'
@@ -59,7 +59,7 @@
         currentRoute === '/home' ? 'bg-[#E4EBFB]' : 'bg-[#7183A6]'
       }} w-px h-6 mx-8"
     ></span>
-    <button class="flex items-center gap-1">
+    <button class="flex items-center gap-1 dropdown">
       <img
         [src]="
           profilePicture
@@ -76,7 +76,6 @@
             : '../../../assets/icons/dropdown-menu-dark.svg'
         }}"
         alt="dropdown menu icon"
-        class="svg-fill"
       />
     </button>
   </div>
