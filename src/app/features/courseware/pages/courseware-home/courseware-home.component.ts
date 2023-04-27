@@ -12,6 +12,7 @@ export class CoursewareHomeComponent implements OnInit {
   courseware: Courseware[] = [];
   firstUpdatedDate = '';
   lastUpdatedDate = '';
+  isFetching = false;
 
   constructor(private coursewareService: CoursewareService) {}
 
@@ -20,6 +21,7 @@ export class CoursewareHomeComponent implements OnInit {
   }
 
   private getCourseware() {
+    this.isFetching = true;
     this.coursewareService
       .fetchData({
         total_per_page: '10',
@@ -34,6 +36,7 @@ export class CoursewareHomeComponent implements OnInit {
 
         const lastDate = res.data[res.data.length - 1].updatedAt;
         this.lastUpdatedDate = formatedDate(lastDate).substring(0, 5);
+        this.isFetching = false;
       });
   }
 }
