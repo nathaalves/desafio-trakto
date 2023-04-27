@@ -1,21 +1,26 @@
-<section class="flex flex-col pl-[72px] pt-14 pb-[84px] rounded-lg bg-white">
+<section
+  class="flex flex-col pl-[72px] pt-14 pb-[84px] mb-12 rounded-lg bg-white"
+>
   <div class="flex mb-11 mr-[72px]">
     <div class="flex flex-col mr-auto">
-      <div class="flex items-center gap-2">
+      <div
+        class="flex items-center gap-2"
+        *ngIf="currentRoute === '/material-didatico'"
+      >
         <p
           class="flex items-center justify-center w-[196px] h-[28px] text-[#7183A6] font-medium vert rounded-full bg-[#E4EBFB]"
         >
           Semana {{ firstUpdatedDate }} até {{ lastUpdatedDate }}
         </p>
         <div class="flex">
-          <button>
+          <button class="hover:opacity-60">
             <img
               src="../../../assets/icons/arrow-left.svg"
               alt="arrow left"
               (click)="scrollLeft()"
             />
           </button>
-          <button>
+          <button class="hover:opacity-60">
             <img
               src="../../../assets/icons/arrow-right.svg"
               alt="arrow right"
@@ -32,13 +37,21 @@
     <button
       class="flex items-center justify-center w-[180px] h-[52px] border border-[{{
         buttonColor
-      }}] rounded-lg text-[{{ buttonColor }}] font-medium"
+      }}] rounded-lg text-[{{ buttonColor }}] font-medium hover:opacity-60"
+      (click)="onSeeAll()"
+      *ngIf="currentRoute === '/material-didatico'"
     >
       {{ buttonLabel }}
     </button>
   </div>
   <div class="overflow-x-scroll scrollbar-hide scroll-smooth" #scrollContainer>
-    <div class="flex gap-8" #coursesContainer>
+    <div
+      class="flex gap-8"
+      [ngClass]="{
+        'flex-wrap': currentRoute !== '/material-didatico'
+      }"
+      #coursesContainer
+    >
       <ng-content></ng-content>
     </div>
   </div>
