@@ -1,27 +1,77 @@
-# DesafioTrakto
+<div align="center">
+    <a href="https://www.trakto.io/">
+        <img src="https://www.trakto.io/wp-content/uploads/2020/11/Favicon.svg" width="64" height="64" alt="MyFinance Icon">
+    </a>
+    <h1>
+        Desafio Trakto
+    </h1>
+</div>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+# Sobre este app
 
-## Development server
+Este projeto consiste em uma aplicação front-end desenvolvida em Angular 2+ que consome a API da Trakto para atender à história do usuário que pode ser acessada [clicando aqui](https://github.com/trakto/desafio_frontend).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Rodando a aplicação em ambiente local
 
-## Code scaffolding
+## Dependências globais
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Você precisará ter instalado em sua máquina:
 
-## Build
+1. Node.js v16 ou superios;
+2. utilizar o [backend](https://github.com/nathaalves/my-finance-backend) desta aplicação.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Clone no repositório
 
-## Running unit tests
+Faça o clone deste repositório para a sua máquina local, executando o seguinte comando:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+git clone https://github.com/nathaalves/my-finance-frontend.git
+```
 
-## Running end-to-end tests
+## Dependências locais
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Para instalar as dependências locais,execute o comando abaixo:
 
-## Further help
+```bash
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Configuração do ambiente de desenvolvimento
+
+Para criar o ambiente de desenvolvimento, utilize como base o arquivo `.env.example`, renomenando-o ou criando uma cópia como `.env`.
+
+- `VITE_API_CONNECTION_BASE_URL`: é a URL utilizada para se conectar ao [backend](https://github.com/nathaalves/my-finance-backend). Por padrão, em ambiente de desenvolvimento, utilize o valor: `http://localhost:5000/`
+
+## Rodar a aplicação
+
+Para rodar a aplicação, execute o comando:
+
+```bash
+npm run dev
+```
+
+## Documentação
+
+Para acessar a documentação, execute o comando:
+
+```bash
+npm run storybook
+```
+
+## Features
+
+- [x] Cadastro do usuário;
+- [x] Login na aplicação;
+- [x] Logout;
+- [x] Refresh token;
+- [ ] Recuperação de senha;
+- [ ] Memorização da senha;
+- [x] Visualização das estatísticas de transações;
+- [ ] Filtragem das estatísticas de transações por dia, semana, mês e periodo selecionado;
+- [x] Criação de transações;
+- [x] Edição de transaçoes;
+- [x] Deleção de transações;
+- [ ] Criação de categorias;
+- [ ] Edição de categorias;
+- [ ] Deleção de categorias;
+- [ ] Trocar o tema da aplicação;
