@@ -43,3 +43,11 @@ Para rodar a aplicação, execute o comando:
 ```bash
 ng serve
 ```
+
+## Acesso à aplicação
+
+Acesse a aplicação através do link:
+
+```
+http://localhost:4200
+```
