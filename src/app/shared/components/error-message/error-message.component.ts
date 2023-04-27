@@ -4,6 +4,6 @@ import { Component, Input } from '@angular/core';
   selector: 'app-error-message',
   templateUrl: './error-message.component.html',
 })
-export class ErroMessageComponent {
+export class ErrorMessageComponent {
   @Input() message: string | null = null;
 }
