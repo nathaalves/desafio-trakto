@@ -35,9 +35,8 @@
       <p class="text-[#7183A6]">{{ subtitle }}</p>
     </div>
     <button
-      class="flex items-center justify-center w-[180px] h-[52px] border border-[{{
-        buttonColor
-      }}] rounded-lg text-[{{ buttonColor }}] font-medium hover:opacity-60"
+      class="flex items-center justify-center w-[180px] h-[52px] border  rounded-lg font-medium hover:opacity-60 
+      {{ buttonClasses }}"
       (click)="onSeeAll()"
       *ngIf="currentRoute === '/material-didatico'"
     >
