@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, tap, throwError } from 'rxjs';
-import { User } from '../../models/user.model';
+import { User } from '../models/user.model';
 import jwt_decode from 'jwt-decode';
 
 interface TokenPayload {
