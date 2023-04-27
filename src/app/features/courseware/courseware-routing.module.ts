@@ -9,7 +9,7 @@ import { CoursewareSeeAllComponent } from './pages/courseware-see-all/courseware
 
 const routes: Routes = [
   {
-    path: 'material-didatico',
+    path: '',
     component: CoursewareComponent,
     canActivate: [AuthGuard],
     children: [
