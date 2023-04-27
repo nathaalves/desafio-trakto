@@ -51,6 +51,7 @@
       }"
       #coursesContainer
     >
+      <app-courses-loading *ngIf="isFetching"></app-courses-loading>
       <ng-content></ng-content>
     </div>
   </div>
