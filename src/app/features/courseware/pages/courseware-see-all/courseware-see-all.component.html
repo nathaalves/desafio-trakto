@@ -1,6 +1,7 @@
 <app-courseware-section
   title="Material didático"
   subtitle="Acesse suas últimas apresentações de aula."
+  [isFetching]="isFetching"
 >
   <app-course
     *ngFor="let course of courseware"

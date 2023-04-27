@@ -7,9 +7,10 @@
   title="Material didático"
   subtitle="Acesse suas últimas apresentações de aula."
   buttonLabel="Ver todo conteúdo"
-  buttonColor="#4743FF"
+  buttonClasses="text-[#4743FF] border-[#4743FF]"
   [firstUpdatedDate]="firstUpdatedDate"
   [lastUpdatedDate]="lastUpdatedDate"
+  [isFetching]="isFetching"
 >
   <app-course
     *ngFor="let course of courseware"

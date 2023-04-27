@@ -14,9 +14,10 @@ export class CoursewareSectionComponent {
   @Input() title: string = '';
   @Input() subtitle: string = '';
   @Input() buttonLabel: string = '';
-  @Input() buttonColor: string = '';
+  @Input() buttonClasses: string = '';
   @Input() firstUpdatedDate: string = '';
   @Input() lastUpdatedDate: string = '';
+  @Input() isFetching: boolean = false;
 
   currentRoute: string = this.router.url;
 

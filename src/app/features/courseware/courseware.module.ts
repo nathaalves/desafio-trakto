@@ -9,6 +9,7 @@ import { CoursewareComponent } from './courseware.component';
 import { CoursewareHomeComponent } from './pages/courseware-home/courseware-home.component';
 import { CoursewareSeeAllComponent } from './pages/courseware-see-all/courseware-see-all.component';
 import { CoursewareService } from './courseware.service';
+import { CoursesLoadingComponent } from './components/courses-loading/courses-loading.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CoursewareService } from './courseware.service';
     CoursewareSectionComponent,
     CoursewareHomeComponent,
     CoursewareSeeAllComponent,
+    CoursesLoadingComponent,
   ],
   imports: [SharedModule, CoursewareRoutingModule],
   exports: [],
